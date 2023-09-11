@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#__next {
+	height: 100%;
+}
+
+#burst-12 {
+	background: yellow;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	text-align: center;
+}
+#burst-12:before,
+#burst-12:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: yellow;
+}
+#burst-12:before {
+	transform: rotate(30deg);
+}
+#burst-12:after {
+	transform: rotate(60deg);
+}
+
+.heart {
+	background: orange;
+	width: 100%;
+	height: 100%;
+	transform: rotate(-45deg);
+	position: relative;
+}
+.heart:before,
+.heart:after {
+	content: '';
+	position: absolute;
+	background: red;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.heart:after {
+	top: -50%;
+	left: 0;
+}
+.heart:before {
+	left: 50%;
+	top: 0;
+}
+.heart {
+	background: red;
+	width: 100%;
+	height: 100%;
+	transform: rotate(-45deg);
+	position: relative;
+}
+.heart:before,
+.heart:after {
+	content: '';
+	position: absolute;
+	background: red;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.heart:after {
+	top: -50%;
+	left: 0;
+}
+.heart:before {
+	left: 50%;
+	top: 0;
+}
