@@ -35,6 +35,7 @@ function Signin({ providers }: any) {
 			router.push('/');
 		}
 	};
+
 	return (
 		<div>
 			{Object.values(providers).map((provider, index) => {

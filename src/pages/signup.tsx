@@ -30,6 +30,35 @@ export default function Home() {
 			console.error('An error occurred:', error);
 		}
 	};
+	const isPasswordValid = (password: any) => {
+		// Check if the password has at least 8 characters
+		if (password.length < 8) {
+			return false;
+		}
+
+		// Check if the password contains a special character
+		if (!/[\W_]/.test(password)) {
+			return false;
+		}
+
+		// Check if the password contains a number
+		if (!/\d/.test(password)) {
+			return false;
+		}
+
+		// Check if the password contains an uppercase letter
+		if (!/[A-Z]/.test(password)) {
+			return false;
+		}
+
+		// Check if the password contains a lowercase letter
+		if (!/[a-z]/.test(password)) {
+			return false;
+		}
+
+		// If all conditions are satisfied, the password is valid
+		return true;
+	};
 	return (
 		<div className='flex flex-col h-screen bg-firstcolor'>
 			<div className='grid place-items-center mx-2 my-20 sm:my-auto'>
@@ -79,7 +108,13 @@ export default function Home() {
                     focus:text-gray-500 focus:outline-none focus:border-gray-200'
 							required
 						/>
-
+						{password && !isPasswordValid(password) && (
+							<p className='text-red-500'>
+								Password must have at least 8 characters,
+								contain a special character, a number, and an
+								uppercase and lowercase letter.
+							</p>
+						)}
 						<button
 							type='submit'
 							className='w-full py-3 mt-10 bg-black rounded-sm
